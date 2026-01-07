@@ -14,6 +14,7 @@ export default function ImageVTO() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const bodyPixModel = useRef<any>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     async function loadModel() {

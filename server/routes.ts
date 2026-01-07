@@ -21,6 +21,7 @@ export async function registerRoutes(
   let model: bodyPix.BodyPix | null = null;
   const getModel = async () => {
     if (!model) {
+      await tf.ready();
       model = await bodyPix.load({
         architecture: 'MobileNetV1',
         outputStride: 16,
