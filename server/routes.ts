@@ -43,7 +43,9 @@ export async function registerRoutes(
       ctx.drawImage(img, 0, 0);
 
       const bodyPixModel = await getModel();
-      const partSegmentation = await bodyPixModel.segmentPersonParts(img as any);
+      
+      // Use the canvas instead of the HTMLImageElement for tfjs-node
+      const partSegmentation = await bodyPixModel.segmentPersonParts(canvas as any);
 
       let minX = img.width, maxX = 0, minY = img.height, maxY = 0;
       let found = false;

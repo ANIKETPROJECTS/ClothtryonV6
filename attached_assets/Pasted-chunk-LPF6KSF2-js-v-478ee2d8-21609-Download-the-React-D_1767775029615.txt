@@ -1,0 +1,38 @@
+chunk-LPF6KSF2.js?v=478ee2d8:21609 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ImageVTO.tsx:31 BodyPix model loaded
+ImageVTO.tsx:98  POST https://3df9692c-5310-4c34-9889-cd689305b9ca-00-23oq0oeqkes29.janeway.replit.dev/api/detect-pose 500 (Internal Server Error)
+handleProcess @ ImageVTO.tsx:98
+callCallback2 @ chunk-LPF6KSF2.js?v=478ee2d8:3680
+invokeGuardedCallbackDev @ chunk-LPF6KSF2.js?v=478ee2d8:3705
+invokeGuardedCallback @ chunk-LPF6KSF2.js?v=478ee2d8:3739
+invokeGuardedCallbackAndCatchFirstError @ chunk-LPF6KSF2.js?v=478ee2d8:3742
+executeDispatch @ chunk-LPF6KSF2.js?v=478ee2d8:7046
+processDispatchQueueItemsInOrder @ chunk-LPF6KSF2.js?v=478ee2d8:7066
+processDispatchQueue @ chunk-LPF6KSF2.js?v=478ee2d8:7075
+dispatchEventsForPlugins @ chunk-LPF6KSF2.js?v=478ee2d8:7083
+(anonymous) @ chunk-LPF6KSF2.js?v=478ee2d8:7206
+batchedUpdates$1 @ chunk-LPF6KSF2.js?v=478ee2d8:18966
+batchedUpdates @ chunk-LPF6KSF2.js?v=478ee2d8:3585
+dispatchEventForPluginEventSystem @ chunk-LPF6KSF2.js?v=478ee2d8:7205
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-LPF6KSF2.js?v=478ee2d8:5484
+dispatchEvent @ chunk-LPF6KSF2.js?v=478ee2d8:5478
+dispatchDiscreteEvent @ chunk-LPF6KSF2.js?v=478ee2d8:5455
+ImageVTO.tsx:124 Detection error: Error: Pose detection failed
+    at handleProcess (ImageVTO.tsx:104:31)
+handleProcess @ ImageVTO.tsx:124
+await in handleProcess
+callCallback2 @ chunk-LPF6KSF2.js?v=478ee2d8:3680
+invokeGuardedCallbackDev @ chunk-LPF6KSF2.js?v=478ee2d8:3705
+invokeGuardedCallback @ chunk-LPF6KSF2.js?v=478ee2d8:3739
+invokeGuardedCallbackAndCatchFirstError @ chunk-LPF6KSF2.js?v=478ee2d8:3742
+executeDispatch @ chunk-LPF6KSF2.js?v=478ee2d8:7046
+processDispatchQueueItemsInOrder @ chunk-LPF6KSF2.js?v=478ee2d8:7066
+processDispatchQueue @ chunk-LPF6KSF2.js?v=478ee2d8:7075
+dispatchEventsForPlugins @ chunk-LPF6KSF2.js?v=478ee2d8:7083
+(anonymous) @ chunk-LPF6KSF2.js?v=478ee2d8:7206
+batchedUpdates$1 @ chunk-LPF6KSF2.js?v=478ee2d8:18966
+batchedUpdates @ chunk-LPF6KSF2.js?v=478ee2d8:3585
+dispatchEventForPluginEventSystem @ chunk-LPF6KSF2.js?v=478ee2d8:7205
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-LPF6KSF2.js?v=478ee2d8:5484
+dispatchEvent @ chunk-LPF6KSF2.js?v=478ee2d8:5478
+dispatchDiscreteEvent @ chunk-LPF6KSF2.js?v=478ee2d8:5455
