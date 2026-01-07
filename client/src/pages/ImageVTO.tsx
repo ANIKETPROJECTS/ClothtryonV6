@@ -97,12 +97,22 @@ export default function ImageVTO() {
     const img = new Image();
     img.src = personImage;
     img.onload = async () => {
-      await detectBody(img);
-      setIsProcessing(false);
-      toast({
-        title: "Model Detection Complete",
-        description: "The T-shirt has been automatically fitted based on body detection.",
-      });
+      try {
+        await detectBody(img);
+        toast({
+          title: "Model Detection Complete",
+          description: "The T-shirt has been automatically fitted based on body detection.",
+        });
+      } catch (err) {
+        console.error("Detection error:", err);
+        toast({
+          title: "Detection Failed",
+          description: "Could not detect body position. Please try a clearer photo.",
+          variant: "destructive"
+        });
+      } finally {
+        setIsProcessing(false);
+      }
     };
   };
 
