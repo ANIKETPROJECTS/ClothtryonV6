@@ -10,11 +10,79 @@ export default function ImageVTO() {
   const [clothingImage, setClothingImage] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [shirtPos, setShirtPos] = useState({ x: 0, y: 0, scale: 1 });
+  const [shirtPos, setShirtPos] = useState({ x: 0, y: 0, scale: 0.5 });
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const { toast } = useToast();
+  const bodyPixModel = useRef<any>(null);
 
-  const handleProcess = () => {
+  useEffect(() => {
+    async function loadModel() {
+      try {
+        const tf = await import("@tensorflow/tfjs-core");
+        await import("@tensorflow/tfjs-backend-webgl");
+        const bodyPix = await import("@tensorflow-models/body-pix");
+        bodyPixModel.current = await bodyPix.load({
+          architecture: 'MobileNetV1',
+          outputStride: 16,
+          multiplier: 0.75,
+          quantBytes: 2
+        });
+        console.log("BodyPix model loaded");
+      } catch (err) {
+        console.error("Failed to load BodyPix model", err);
+      }
+    }
+    loadModel();
+  }, []);
+
+  const detectBody = async (imgElement: HTMLImageElement) => {
+    if (!bodyPixModel.current) return;
+    const segmentation = await bodyPixModel.current.segmentPerson(imgElement);
+    
+    // Simple estimation of torso area for fitting
+    // We look for parts that correspond to torso
+    const { width, height } = segmentation;
+    let minX = width, maxX = 0, minY = height, maxY = 0;
+    let found = false;
+
+    // BodyPix mask: 12 is torso-front, 13 is torso-back
+    // But segmentPerson returns a 0/1 mask. 
+    // For more detail we'd use segmentPersonParts.
+    // Let's use the bounding box of the whole person as a fallback if parts aren't used.
+    
+    // Improved detection using parts
+    const partSegmentation = await bodyPixModel.current.segmentPersonParts(imgElement);
+    
+    partSegmentation.data.forEach((partId: number, i: number) => {
+      if ([12, 13].includes(partId)) { // Torso parts
+        const x = i % width;
+        const y = Math.floor(i / width);
+        minX = Math.min(minX, x);
+        maxX = Math.max(maxX, x);
+        minY = Math.min(minY, y);
+        maxY = Math.max(maxY, y);
+        found = true;
+      }
+    });
+
+    if (found) {
+      const torsoWidth = maxX - minX;
+      const centerX = minX + torsoWidth / 2;
+      const centerY = minY + (maxY - minY) / 2;
+      
+      // Calculate relative position and scale
+      const containerWidth = containerRef.current?.clientWidth || width;
+      const containerHeight = containerRef.current?.clientHeight || height;
+      
+      const relX = (centerX / width) * containerWidth - (containerWidth / 2);
+      const relY = (centerY / height) * containerHeight - (containerHeight / 2);
+      const scale = (torsoWidth / width) * 2; // Approximate scale
+
+      setShirtPos({ x: relX, y: relY, scale });
+    }
+  };
+
+  const handleProcess = async () => {
     if (!personImage || !clothingImage) {
       toast({
         title: "Missing Images",
@@ -23,15 +91,19 @@ export default function ImageVTO() {
       });
       return;
     }
-    // We are now just rendering the shirt on top, no need to call backend for generation
     setIsProcessing(true);
-    setTimeout(() => {
+    
+    // Create image element to run detection
+    const img = new Image();
+    img.src = personImage;
+    img.onload = async () => {
+      await detectBody(img);
       setIsProcessing(false);
       toast({
-        title: "Ready for Fitting",
-        description: "You can now move and scale the T-shirt to fit perfectly.",
+        title: "Model Detection Complete",
+        description: "The T-shirt has been automatically fitted based on body detection.",
       });
-    }, 500);
+    };
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: "person" | "clothing") => {
@@ -70,7 +142,7 @@ export default function ImageVTO() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [clothingImage, personImage]);
+  }, [clothingImage, personImage, shirtPos]); // Added shirtPos to dependencies to prevent stale closure if needed, though functional updates are used. Actually, functional updates are used so only images are strictly needed, but let's keep it safe.
 
   const VTOInterface = ({ isFull = false }) => (
     <div className={`relative bg-neutral-900 rounded-lg overflow-hidden flex items-center justify-center ${isFull ? 'w-full h-full' : 'aspect-[3/4] w-full'}`} ref={containerRef}>
@@ -81,10 +153,18 @@ export default function ImageVTO() {
         <motion.div
           drag
           dragMomentum={false}
-          style={ { x: shirtPos.x, y: shirtPos.y, scale: shirtPos.scale } }
+          onDrag={(event, info) => {
+            // Keep the position stable by updating state relative to container
+            setShirtPos(prev => ({
+              ...prev,
+              x: prev.x + info.delta.x,
+              y: prev.y + info.delta.y
+            }));
+          }}
+          style={ { x: shirtPos.x, y: shirtPos.y, scale: shirtPos.scale, touchAction: "none" } }
           className="absolute cursor-move z-10 w-1/2"
         >
-          <img src={clothingImage} alt="Shirt" className="w-full h-auto pointer-events-none" />
+          <img src={clothingImage} alt="Shirt" className="w-full h-auto pointer-events-none select-none" />
         </motion.div>
       )}
       
@@ -113,8 +193,9 @@ export default function ImageVTO() {
             </div>
           </div>
           <div className="flex gap-2 pointer-events-auto">
-            <Button size="icon" variant="secondary" className="h-8 w-8" onClick={() => scaleShirt(0.02)}><Plus className="h-4 w-4" /></Button>
-            <Button size="icon" variant="secondary" className="h-8 w-8" onClick={() => scaleShirt(-0.02)}><Minus className="h-4 w-4" /></Button>
+            <Button size="icon" variant="secondary" className="h-8 w-8" onClick={() => scaleShirt(0.05)}><Plus className="h-4 w-4" /></Button>
+            <Button size="icon" variant="secondary" className="h-8 w-8" onClick={() => scaleShirt(-0.05)}><Minus className="h-4 w-4" /></Button>
+            <Button size="icon" variant="secondary" className="h-8 w-8 px-2 w-auto text-xs" onClick={() => setShirtPos({ x: 0, y: 0, scale: 0.5 })}>Reset</Button>
           </div>
         </div>
       )}
