@@ -10,78 +10,10 @@ export default function ImageVTO() {
   const [clothingImage, setClothingImage] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [shirtPos, setShirtPos] = useState({ x: 0, y: 0, scale: 0.5 });
+  const [shirtPos, setShirtPos] = useState({ x: 0, y: -40, scale: 0.5 });
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const bodyPixModel = useRef<any>(null);
   const { toast } = useToast();
-
-  useEffect(() => {
-    async function loadModel() {
-      try {
-        const tf = await import("@tensorflow/tfjs-core");
-        await import("@tensorflow/tfjs-backend-webgl");
-        const bodyPix = await import("@tensorflow-models/body-pix");
-        bodyPixModel.current = await bodyPix.load({
-          architecture: 'MobileNetV1',
-          outputStride: 16,
-          multiplier: 0.75,
-          quantBytes: 2
-        });
-        console.log("BodyPix model loaded");
-      } catch (err) {
-        console.error("Failed to load BodyPix model", err);
-      }
-    }
-    loadModel();
-  }, []);
-
-  const detectBody = async (imgElement: HTMLImageElement) => {
-    if (!bodyPixModel.current) return;
-    const segmentation = await bodyPixModel.current.segmentPerson(imgElement);
-    
-    // Simple estimation of torso area for fitting
-    // We look for parts that correspond to torso
-    const { width, height } = segmentation;
-    let minX = width, maxX = 0, minY = height, maxY = 0;
-    let found = false;
-
-    // BodyPix mask: 12 is torso-front, 13 is torso-back
-    // But segmentPerson returns a 0/1 mask. 
-    // For more detail we'd use segmentPersonParts.
-    // Let's use the bounding box of the whole person as a fallback if parts aren't used.
-    
-    // Improved detection using parts
-    const partSegmentation = await bodyPixModel.current.segmentPersonParts(imgElement);
-    
-    partSegmentation.data.forEach((partId: number, i: number) => {
-      if ([12, 13].includes(partId)) { // Torso parts
-        const x = i % width;
-        const y = Math.floor(i / width);
-        minX = Math.min(minX, x);
-        maxX = Math.max(maxX, x);
-        minY = Math.min(minY, y);
-        maxY = Math.max(maxY, y);
-        found = true;
-      }
-    });
-
-    if (found) {
-      const torsoWidth = maxX - minX;
-      const centerX = minX + torsoWidth / 2;
-      const centerY = minY + (maxY - minY) / 2;
-      
-      // Calculate relative position and scale
-      const containerWidth = containerRef.current?.clientWidth || width;
-      const containerHeight = containerRef.current?.clientHeight || height;
-      
-      const relX = (centerX / width) * containerWidth - (containerWidth / 2);
-      const relY = (centerY / height) * containerHeight - (containerHeight / 2);
-      const scale = (torsoWidth / width) * 2; // Approximate scale
-
-      setShirtPos({ x: relX, y: relY, scale });
-    }
-  };
 
   const handleProcess = async () => {
     if (!personImage || !clothingImage) {
@@ -94,42 +26,15 @@ export default function ImageVTO() {
     }
     setIsProcessing(true);
     
-    try {
-      const response = await fetch("/api/detect-pose", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ personImage }),
-      });
-      
-      if (!response.ok) throw new Error("Pose detection failed");
-      
-      const data = await response.json();
-      setPersonImage(data.visualizedImage); // Show the image with green lines
-      
-      // Calculate relative position and scale based on detection
-      const containerWidth = containerRef.current?.clientWidth || 800;
-      const containerHeight = containerRef.current?.clientHeight || 1000;
-      
-      const relX = (data.center.x / data.dimensions.width) * containerWidth - (containerWidth / 2);
-      const relY = (data.center.y / data.dimensions.height) * containerHeight - (containerHeight / 2);
-      const scale = (data.torsoWidth / data.dimensions.width) * 2.2; // Slightly more generous scale
-
-      setShirtPos({ x: relX, y: relY, scale });
-      
-      toast({
-        title: "Model Detection Complete",
-        description: "The T-shirt has been automatically fitted based on detected body position.",
-      });
-    } catch (err) {
-      console.error("Detection error:", err);
-      toast({
-        title: "Detection Failed",
-        description: "Could not detect body position. Falling back to manual mode.",
-        variant: "destructive"
-      });
-    } finally {
+    // Simulate processing for UX feel, then just spawn at upper middle
+    setTimeout(() => {
+      setShirtPos({ x: 0, y: -40, scale: 0.5 });
       setIsProcessing(false);
-    }
+      toast({
+        title: "Ready for Fitting",
+        description: "The T-shirt has been spawned at the top-center. You can now move and scale it.",
+      });
+    }, 500);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: "person" | "clothing") => {
