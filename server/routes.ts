@@ -5,6 +5,9 @@ import { api } from "@shared/routes";
 import { setupVTOApi } from "./vto-api";
 import { registerChatRoutes } from "./replit_integrations/chat";
 import { registerImageRoutes } from "./replit_integrations/image";
+import * as tf from "@tensorflow/tfjs-node";
+import * as bodyPix from "@tensorflow-models/body-pix";
+import { createCanvas, loadImage } from "canvas";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -14,6 +17,78 @@ export async function registerRoutes(
   setupVTOApi(app);
   registerChatRoutes(app);
   registerImageRoutes(app);
+
+  let model: bodyPix.BodyPix | null = null;
+  const getModel = async () => {
+    if (!model) {
+      model = await bodyPix.load({
+        architecture: 'MobileNetV1',
+        outputStride: 16,
+        multiplier: 0.75,
+        quantBytes: 2
+      });
+    }
+    return model;
+  };
+
+  app.post("/api/detect-pose", async (req, res) => {
+    try {
+      const { personImage } = req.body;
+      if (!personImage) return res.status(400).json({ error: "Missing image" });
+
+      const img = await loadImage(personImage);
+      const canvas = createCanvas(img.width, img.height);
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+
+      const bodyPixModel = await getModel();
+      const partSegmentation = await bodyPixModel.segmentPersonParts(img as any);
+
+      let minX = img.width, maxX = 0, minY = img.height, maxY = 0;
+      let found = false;
+
+      partSegmentation.data.forEach((partId: number, i: number) => {
+        if ([12, 13].includes(partId)) { // Torso parts
+          const x = i % img.width;
+          const y = Math.floor(i / img.width);
+          minX = Math.min(minX, x);
+          maxX = Math.max(maxX, x);
+          minY = Math.min(minY, y);
+          maxY = Math.max(maxY, y);
+          found = true;
+        }
+      });
+
+      if (found) {
+        // Draw green lines for visualization
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = Math.max(2, Math.floor(img.width / 200));
+        ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
+        
+        // Draw crosshair at center
+        const centerX = minX + (maxX - minX) / 2;
+        const centerY = minY + (maxY - minY) / 2;
+        ctx.beginPath();
+        ctx.moveTo(centerX - 20, centerY);
+        ctx.lineTo(centerX + 20, centerY);
+        ctx.moveTo(centerX, centerY - 20);
+        ctx.lineTo(centerX, centerY + 20);
+        ctx.stroke();
+
+        res.json({
+          visualizedImage: canvas.toDataURL(),
+          center: { x: centerX, y: centerY },
+          torsoWidth: maxX - minX,
+          dimensions: { width: img.width, height: img.height }
+        });
+      } else {
+        res.status(422).json({ error: "No torso detected" });
+      }
+    } catch (err) {
+      console.error("Pose detection error:", err);
+      res.status(500).json({ error: "Server error during pose detection" });
+    }
+  });
 
   app.get(api.products.list.path, async (req, res) => {
     const products = await storage.getProducts();

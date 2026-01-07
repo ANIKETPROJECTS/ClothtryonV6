@@ -93,27 +93,42 @@ export default function ImageVTO() {
     }
     setIsProcessing(true);
     
-    // Create image element to run detection
-    const img = new Image();
-    img.src = personImage;
-    img.onload = async () => {
-      try {
-        await detectBody(img);
-        toast({
-          title: "Model Detection Complete",
-          description: "The T-shirt has been automatically fitted based on body detection.",
-        });
-      } catch (err) {
-        console.error("Detection error:", err);
-        toast({
-          title: "Detection Failed",
-          description: "Could not detect body position. Please try a clearer photo.",
-          variant: "destructive"
-        });
-      } finally {
-        setIsProcessing(false);
-      }
-    };
+    try {
+      const response = await fetch("/api/detect-pose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ personImage }),
+      });
+      
+      if (!response.ok) throw new Error("Pose detection failed");
+      
+      const data = await response.json();
+      setPersonImage(data.visualizedImage); // Show the image with green lines
+      
+      // Calculate relative position and scale based on detection
+      const containerWidth = containerRef.current?.clientWidth || 800;
+      const containerHeight = containerRef.current?.clientHeight || 1000;
+      
+      const relX = (data.center.x / data.dimensions.width) * containerWidth - (containerWidth / 2);
+      const relY = (data.center.y / data.dimensions.height) * containerHeight - (containerHeight / 2);
+      const scale = (data.torsoWidth / data.dimensions.width) * 2.2; // Slightly more generous scale
+
+      setShirtPos({ x: relX, y: relY, scale });
+      
+      toast({
+        title: "Model Detection Complete",
+        description: "The T-shirt has been automatically fitted based on detected body position.",
+      });
+    } catch (err) {
+      console.error("Detection error:", err);
+      toast({
+        title: "Detection Failed",
+        description: "Could not detect body position. Falling back to manual mode.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: "person" | "clothing") => {
