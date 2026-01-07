@@ -1,0 +1,289 @@
+chunk-LPF6KSF2.js?v=027fbe19:21609 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+ The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127
+(anonymous) @ @tensorflow-models_p…js?v=027fbe19:14989
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+ Pose detection failed: 
+runPoseDetection @ FittingModal.tsx:98
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard2of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard2of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at chunk-HWM63X54.js?v=027fbe19:12508:48
+    at Array.map (<anonymous>)
+    at loadWeightsAsArrayBuffer (chunk-HWM63X54.js?v=027fbe19:12508:30)
+    at HTTPRequest.loadWeights (chunk-HWM63X54.js?v=027fbe19:12748:27)
+    at async getModelArtifactsForJSON (chunk-HWM63X54.js?v=027fbe19:5291:33)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/group1-shard1of2.bin?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/group1-shard1of2.bin?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
+1:1 Access to fetch at 'https://www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true' (redirected from 'https://tfhub.dev/google/tfjs-model/movenet/singlepose/lightning/4/model.json?tfjs-format=file') from origin 'https://36f8c49e-29a7-401f-9a4a-a85852f7fec6-00-t3geptq6w8h0.kirk.replit.dev' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+www.kaggle.com/models/google/movenet/tfJs/singlepose-lightning/4/model.json?tfjs-format=file&tfhub-redirect=true:1  Failed to load resource: net::ERR_FAILED
+FittingModal.tsx:112 Pose detection failed: TypeError: Failed to fetch
+    at HTTPRequest.fetch (chunk-HWM63X54.js?v=027fbe19:5967:12)
+    at HTTPRequest.loadModelJSON (chunk-HWM63X54.js?v=027fbe19:12680:43)
+    at HTTPRequest.load (chunk-HWM63X54.js?v=027fbe19:12715:34)
+    at GraphModel.load (@tensorflow-models_pose-detection.js?v=027fbe19:12880:37)
+    at loadGraphModel (@tensorflow-models_pose-detection.js?v=027fbe19:13258:15)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:26814:378
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25595:18
+    at Object.next (@tensorflow-models_pose-detection.js?v=027fbe19:25603:9)
+    at @tensorflow-models_pose-detection.js?v=027fbe19:25545:34
+    at new Promise (<anonymous>)
+runPoseDetection @ FittingModal.tsx:112
