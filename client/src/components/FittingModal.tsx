@@ -77,10 +77,13 @@ export function FittingModal({ isOpen, onClose, personImage, clothingImages }: F
         drag
         dragMomentum={false}
         onDrag={(e, info) => {
-          setShirtPos(prev => ({ ...prev, x: prev.x + info.delta.x, y: prev.y + info.delta.y }));
+          setShirtPos(prev => ({ 
+            ...prev, 
+            x: prev.x + info.delta.x, 
+            y: prev.y + info.delta.y 
+          }));
         }}
-        style={ { scale: shirtPos.scale } }
-        animate={ { x: shirtPos.x, y: shirtPos.y } }
+        style={ { x: shirtPos.x, y: shirtPos.y, scale: shirtPos.scale, touchAction: "none" } }
         className="absolute cursor-move z-10 w-1/2 flex items-center justify-center"
       >
         <img 
